@@ -19,6 +19,18 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 8px;
+  /* Ajuste manual del hero en las 3 paginas */
+  --hero-height: 404px;
+  --hero-padding-top: 118px;
+  --hero-padding-bottom: 62px;
+  /* Ajuste manual del logo chico de la card ZEISS */
+  --logo-zeiss-scale: 1;
+  --logo-zeiss-x: 0px;
+  --logo-zeiss-y: 0px;
+  /* Ajuste manual del logo del footer */
+  --logo-footer-scale: 1.05;
+  --logo-footer-x: 0px;
+  --logo-footer-y: -2px;
 }
 
 *,
@@ -29,6 +41,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -63,6 +77,7 @@ textarea {
   justify-content: center;
   align-items: center;
   gap: clamp(32px, 8vw, 150px);
+  min-height: 54px;
   padding: 18px 20px 0;
   font-family: "Poppins", sans-serif;
 }
@@ -70,7 +85,7 @@ textarea {
 .site-nav a {
   position: relative;
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #ffffff;
   letter-spacing: 0.02em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
@@ -80,16 +95,18 @@ textarea {
 
 .site-nav a.active,
 .site-nav a:hover {
-  font-weight: 700;
   border-bottom-color: #ffffff;
 }
 
 .hero {
   position: relative;
-  min-height: 370px;
-  padding: 116px 24px 58px;
-  display: grid;
-  place-items: center;
+  height: var(--hero-height);
+  min-height: var(--hero-height);
+  max-height: var(--hero-height);
+  padding: var(--hero-padding-top) 24px var(--hero-padding-bottom);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 
@@ -111,15 +128,18 @@ textarea {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
+  width: min(720px, 100%);
   text-align: center;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(2.2rem, 5vw, 3.45rem);
+  font-size: 3.35rem;
   font-weight: 700;
   line-height: 1.05;
 }
@@ -133,16 +153,18 @@ textarea {
 }
 
 .hero-tags {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0;
+  max-width: 700px;
 }
 
 .hero-tags span {
   padding: 0 16px;
   font-size: 0.72rem;
   font-weight: 300;
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.84);
   border-right: 1px solid rgba(255, 255, 255, 0.45);
 }
@@ -217,55 +239,70 @@ textarea {
 
 .zeiss-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.95fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.94fr);
   gap: 0;
   align-items: stretch;
-  width: min(780px, 100%);
+  width: min(915px, 100%);
   margin: 0 auto;
   padding: 0;
   background: var(--zeiss-surface);
-  border: 1px solid rgba(191, 207, 203, 0.65);
-  border-radius: 24px;
-  box-shadow: 0 10px 18px rgba(64, 89, 85, 0.14);
+  border: 1px solid rgba(204, 214, 212, 0.92);
+  border-radius: 30px;
+  box-shadow: 0 10px 18px rgba(64, 89, 85, 0.18);
   overflow: hidden;
 }
 
 .zeiss-copy {
-  padding: 20px 24px 18px;
-  border-right: 1px solid var(--line);
+  padding: 18px 26px 20px;
+  border-right: 2px solid rgba(55, 55, 55, 0.42);
 }
 
 .zeiss-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  font-size: 1rem;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
+.zeiss-eyebrow-logo-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: #fbfbfb;
+  border: 2px solid rgba(197, 197, 197, 0.65);
+  box-shadow: 0 4px 10px rgba(70, 70, 70, 0.1);
+}
+
 .zeiss-eyebrow-logo {
-  width: 26px;
-  height: 26px;
+  width: 100%;
+  max-width: none;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  border-radius: 50%;
-  flex: 0 0 auto;
+  transform: translate(var(--logo-zeiss-x), var(--logo-zeiss-y)) scale(var(--logo-zeiss-scale));
+  transform-origin: center;
 }
 
 .zeiss-copy p {
   margin: 0;
-  max-width: 350px;
-  font-size: 0.92rem;
+  max-width: 430px;
+  font-size: 0.94rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .zeiss-features {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: var(--card);
-  align-items: stretch;
+  align-items: center;
+  padding: 18px 24px 14px;
+  background: transparent;
 }
 
 .zeiss-feature {
@@ -273,8 +310,8 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 24px 14px 18px;
+  gap: 14px;
+  padding: 10px 10px;
   text-align: center;
 }
 
@@ -285,27 +322,28 @@ textarea {
 .zeiss-feature-icon {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  border: 1px solid #8aa6a2;
+  width: 66px;
+  height: 66px;
+  border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.36);
+  background: #ecf4f3;
+  box-shadow: 0 10px 12px rgba(55, 55, 55, 0.18);
 }
 
 .zeiss-feature-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: #485655;
+  width: 31px;
+  height: 31px;
+  stroke: #445564;
   fill: none;
-  stroke-width: 1.7;
+  stroke-width: 1.8;
 }
 
 .zeiss-feature span {
   display: block;
   max-width: 110px;
-  font-size: 0.92rem;
-  color: #3e4a49;
-  line-height: 1.35;
+  font-size: 0.94rem;
+  color: #1f2529;
+  line-height: 1.25;
 }
 
 .process-section {
@@ -319,7 +357,7 @@ textarea {
 .process-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 42px;
+  gap: 58px;
   width: min(760px, 100%);
   margin: 30px auto 0;
 }
@@ -498,30 +536,32 @@ textarea {
 
 .lens-stack {
   display: grid;
-  gap: 48px;
-  width: min(980px, 100%);
+  gap: 56px;
+  width: min(1140px, 100%);
   margin: 34px auto 0;
 }
 
 .lens-panel {
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(280px, 0.9fr) minmax(250px, 1fr);
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 0.92fr) minmax(260px, 1fr);
   grid-template-areas:
     "left middle right";
   align-items: stretch;
-  gap: 16px;
-  padding: 16px;
-  background: #cfe4df;
-  border-radius: 34px;
+  gap: 22px;
+  padding: 22px;
+  background: #c9e1db;
+  border-radius: 38px;
+  box-shadow: 0 12px 24px rgba(92, 131, 124, 0.12);
 }
 
 .lens-photo {
-  min-height: 306px;
+  min-height: 338px;
   border-radius: 30px;
+  background-color: #f7fbfa;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72), 0 10px 18px rgba(84, 118, 112, 0.1);
 }
 
 .lens-photo.city {
@@ -547,30 +587,33 @@ textarea {
 .lens-copy {
   grid-area: middle;
   display: grid;
-  gap: 0;
-  min-height: 306px;
-  overflow: hidden;
-  border-radius: 24px;
+  gap: 18px;
+  min-height: 338px;
+  overflow: visible;
+  border-radius: 0;
+  align-content: center;
 }
 
 .lens-copy-block {
   display: grid;
   place-content: center;
-  padding: 26px 22px;
+  min-height: 160px;
+  padding: 30px 24px;
   text-align: center;
-  border-radius: 0;
+  border-radius: 30px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .lens-copy-block + .lens-copy-block {
-  margin-top: -2px;
+  margin-top: 0;
 }
 
 .lens-copy-block.light-card {
-  background: var(--card);
+  background: #edf5f3;
 }
 
 .lens-copy-block.dark-card {
-  background: var(--card-strong);
+  background: #b9d9d3;
 }
 
 .lens-copy-block h3 {
@@ -786,21 +829,19 @@ textarea {
 }
 
 .top-row .joint-top {
-  border-radius: 24px 24px 18px 18px;
+  border-radius: 30px;
 }
 
 .top-row .joint-bottom {
-  border-radius: 0 0 24px 24px;
-  padding-top: 30px;
+  border-radius: 30px;
 }
 
 .bottom-row .joint-top {
-  border-radius: 24px 24px 18px 18px;
+  border-radius: 30px;
 }
 
 .bottom-row .joint-bottom {
-  border-radius: 0 0 24px 24px;
-  padding-top: 30px;
+  border-radius: 30px;
 }
 
 .footer-shell {
@@ -810,7 +851,7 @@ textarea {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 128px 1.45fr 1fr 0.9fr;
+  grid-template-columns: 150px 1.45fr 1fr 0.9fr;
   gap: 26px;
   align-items: center;
   padding: 16px 0 14px;
@@ -819,21 +860,33 @@ textarea {
 .footer-brand {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 4px;
-  transform: translateX(-18px);
+  justify-content: center;
+  padding-left: 0;
+  transform: none;
 }
 
-.footer-brand img {
-  width: 86px;
-  height: 86px;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.9;
+.footer-brand-badge {
+  width: 118px;
+  height: 118px;
   border-radius: 50%;
-  background: #f8f8f8;
-  border: 2px solid rgba(173, 173, 173, 0.45);
-  filter: drop-shadow(0 3px 6px rgba(58, 58, 58, 0.2));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbfbfb;
+  border: 2px solid rgba(190, 190, 190, 0.7);
+  box-shadow: 0 4px 10px rgba(58, 58, 58, 0.16);
+}
+
+.footer-brand-badge img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+  opacity: 1;
+  transform: translate(var(--logo-footer-x), var(--logo-footer-y)) scale(var(--logo-footer-scale));
+  transform-origin: center;
 }
 
 .footer-contact {
@@ -935,8 +988,17 @@ textarea {
 }
 
 @media (max-width: 980px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
   .reviews-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lens-panel {
+    grid-template-columns: minmax(220px, 1fr) minmax(260px, 0.95fr) minmax(220px, 1fr);
+    gap: 18px;
   }
 
   .footer-grid {
@@ -944,7 +1006,7 @@ textarea {
   }
 
   .footer-brand {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .zeiss-card {
@@ -961,8 +1023,15 @@ textarea {
 
 @media (max-width: 780px) {
   .hero {
+    height: 330px;
     min-height: 330px;
+    max-height: 330px;
     padding-top: 106px;
+    padding-bottom: 44px;
+  }
+
+  .hero h1 {
+    font-size: 2.45rem;
   }
 
   .hero-tags {
@@ -985,7 +1054,15 @@ textarea {
   }
 
   .lens-photo {
-    min-height: 250px;
+    min-height: 260px;
+  }
+
+  .lens-copy {
+    min-height: auto;
+  }
+
+  .lens-copy-block {
+    min-height: auto;
   }
 
   .cta-row {
@@ -1024,6 +1101,10 @@ textarea {
 
   .site-nav a {
     font-size: 0.82rem;
+  }
+
+  .hero h1 {
+    font-size: 2.08rem;
   }
 
   .hero p {
