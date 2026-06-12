@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 48" role="img" aria-label="Placeholder Mastercard">
-  <rect width="118" height="48" rx="8" fill="#ffffff"/>
-  <rect x="1" y="1" width="116" height="46" rx="7" fill="none" stroke="#d8e1ea"/>
-  <circle cx="50" cy="24" r="12" fill="#f15a24"/>
-  <circle cx="68" cy="24" r="12" fill="#fbb03b"/>
-  <path d="M59 13a12 12 0 0 0 0 22 12 12 0 0 0 0-22z" fill="#d94028"/>
-</svg>
