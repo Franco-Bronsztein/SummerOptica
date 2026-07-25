@@ -548,15 +548,19 @@ textarea {
     "left middle right";
   align-items: stretch;
   gap: 14px;
-  padding: 12px;
   border-radius: 28px;
   overflow: hidden;
   background: linear-gradient(to right, #ddebe8 0%, #ddebe8 62%, #bcdad4 62%, #bcdad4 100%);
   box-shadow: 0 12px 24px rgba(92, 131, 124, 0.12);
 }
 
+.lens-panel.bottom-row {
+  background: linear-gradient(to right, #bcdad4 0%, #bcdad4 38%, #ddebe8 38%, #ddebe8 100%);
+}
+
 .lens-photo {
   min-height: 338px;
+  margin: 12px;
   border-radius: 20px;
   background-color: #f7fbfa;
   background-position: center;
@@ -590,8 +594,6 @@ textarea {
   grid-template-rows: 1fr 1fr;
   gap: 0;
   min-height: 338px;
-  border-radius: 20px;
-  overflow: hidden;
 }
 
 .lens-copy-block {
@@ -607,6 +609,20 @@ textarea {
 
 .lens-copy-block.dark-card {
   background: #bcdad4;
+}
+
+/* El lado que toca la zona del mismo color queda cuadrado (se funde con el
+   fondo); el lado que toca la zona del color opuesto queda redondeado
+   (deja ver un pequeno acento), tal como en el diseno de Figma. Este patron
+   (cuadrado-izq/redondeado-der en el primero, al reves en el segundo) es
+   el mismo en las dos filas: lo que cambia entre filas es el color de
+   fondo detras, no que lado se redondea. */
+.lens-copy-block:first-child {
+  border-radius: 0 20px 20px 0;
+}
+
+.lens-copy-block:last-child {
+  border-radius: 20px 0 0 20px;
 }
 
 .lens-copy-block h3 {
@@ -1031,18 +1047,21 @@ textarea {
 
   .lens-panel {
     gap: 10px;
-    padding: 10px;
     border-radius: 22px;
     background: linear-gradient(to bottom, #ddebe8 0%, #ddebe8 62%, #bcdad4 62%, #bcdad4 100%);
   }
 
+  .lens-panel.bottom-row {
+    background: linear-gradient(to bottom, #bcdad4 0%, #bcdad4 38%, #ddebe8 38%, #ddebe8 100%);
+  }
+
   .lens-photo {
     min-height: 260px;
+    margin: 10px;
   }
 
   .lens-copy {
     min-height: auto;
-    border-radius: 16px;
   }
 
   .lens-copy-block {

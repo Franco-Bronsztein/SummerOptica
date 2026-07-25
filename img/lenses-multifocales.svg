@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Foto ilustrada de lentes multifocales">
-  <rect width="420" height="320" rx="28" fill="#f7f7f3"/>
-  <rect x="24" y="24" width="372" height="272" rx="20" fill="#edf2f4"/>
+  <rect width="420" height="320" rx="28" fill="#edf2f4"/>
   <rect x="60" y="66" width="300" height="188" rx="14" fill="#d7ebf4"/>
   <rect x="60" y="168" width="300" height="86" fill="#ece7dd"/>
   <rect x="132" y="88" width="24" height="164" fill="#d7d0c7"/>

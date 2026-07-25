@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "opticasummer-static",
+      "name": "opticasammer-static",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["tools/dev-server.mjs", "E:/Franco/Paginas Web/SummerOptica", "5190"],
+      "runtimeArgs": ["tools/dev-server.mjs"],
       "port": 5190
     }
   ]

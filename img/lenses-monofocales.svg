@@ -5,8 +5,7 @@
       <stop offset="1" stop-color="#f6f1e9"/>
     </linearGradient>
   </defs>
-  <rect width="420" height="320" rx="28" fill="#f6f6f3"/>
-  <rect x="24" y="24" width="372" height="272" rx="20" fill="url(#sky)"/>
+  <rect width="420" height="320" rx="28" fill="url(#sky)"/>
   <rect x="24" y="190" width="372" height="106" rx="0" fill="#ded8cf"/>
   <rect x="64" y="148" width="34" height="80" fill="#b1a89d"/>
   <rect x="118" y="132" width="42" height="96" fill="#bdb3a7"/>
