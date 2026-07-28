@@ -553,108 +553,78 @@ textarea {
   padding-top: 28px;
 }
 
-.lens-stack {
+.lens-ficha-grid {
   display: grid;
-  gap: 56px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
   width: min(1140px, 100%);
   margin: 34px auto 0;
 }
 
-.lens-panel {
-  display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(320px, 0.92fr) minmax(260px, 1fr);
-  grid-template-areas:
-    "left middle right";
-  align-items: stretch;
+.lens-ficha {
+  background: var(--surface);
+  border-radius: 16px;
+  border-left: 5px solid var(--accent-deep);
+  box-shadow: var(--shadow-soft);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lens-ficha-head {
+  display: flex;
+  align-items: center;
   gap: 14px;
-  border-radius: 28px;
+}
+
+.lens-ficha-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   overflow: hidden;
-  background: linear-gradient(to right, #ddebe8 0%, #ddebe8 62%, #bcdad4 62%, #bcdad4 100%);
-  box-shadow: 0 12px 24px rgba(92, 131, 124, 0.12);
-}
-
-.lens-panel.bottom-row {
-  background: linear-gradient(to right, #bcdad4 0%, #bcdad4 38%, #ddebe8 38%, #ddebe8 100%);
-}
-
-.lens-photo {
-  min-height: 338px;
-  margin: 12px;
-  border-radius: 20px;
+  flex: 0 0 auto;
   background-color: #f7fbfa;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 4px var(--line);
 }
 
-.lens-photo.city {
-  grid-area: left;
-  background-image: url("./img/lenses-monofocales.svg");
+.lens-ficha h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
-.lens-photo.office {
-  grid-area: right;
-  background-image: url("./img/lenses-office.svg");
+.lens-ficha p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
-.lens-photo.kids {
-  grid-area: left;
-  background-image: url("./img/lenses-kids.svg");
+.lens-ficha.is-placeholder {
+  border-left-style: dashed;
+  border-left-color: var(--line);
+  box-shadow: none;
+  background: transparent;
 }
 
-.lens-photo.frame {
-  grid-area: right;
-  background-image: url("./img/lenses-multifocales.svg");
-}
-
-.lens-copy {
-  grid-area: middle;
+.lens-ficha.is-placeholder .lens-ficha-thumb {
+  background: var(--card);
+  box-shadow: none;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 0;
-  min-height: 338px;
-}
-
-.lens-copy-block {
-  display: grid;
-  place-content: center;
-  padding: 30px 24px;
-  text-align: center;
-}
-
-.lens-copy-block.light-card {
-  background: #ddebe8;
-}
-
-.lens-copy-block.dark-card {
-  background: #bcdad4;
-}
-
-/* El lado que toca la zona del mismo color queda cuadrado (se funde con el
-   fondo); el lado que toca la zona del color opuesto queda redondeado
-   (deja ver un pequeño acento), tal como en el diseño de Figma. Este patrón
-   (cuadrado-izq/redondeado-der en el primero, al revés en el segundo) es
-   el mismo en las dos filas: lo que cambia entre filas es el color de
-   fondo detrás, no qué lado se redondea. */
-.lens-copy-block:first-child {
-  border-radius: 0 20px 20px 0;
-}
-
-.lens-copy-block:last-child {
-  border-radius: 20px 0 0 20px;
-}
-
-.lens-copy-block h3 {
-  margin: 0 0 12px;
+  place-items: center;
+  color: var(--accent-deep);
   font-size: 1.3rem;
   font-weight: 700;
 }
 
-.lens-copy-block p {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.45;
-  color: #4f5656;
+.lens-ficha.is-placeholder h3,
+.lens-ficha.is-placeholder p {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .cta-section {
@@ -1007,9 +977,8 @@ textarea {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lens-panel {
-    grid-template-columns: minmax(220px, 1fr) minmax(260px, 0.95fr) minmax(220px, 1fr);
-    gap: 18px;
+  .lens-ficha-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .footer-grid {
@@ -1056,7 +1025,7 @@ textarea {
   .process-row,
   .contact-cards,
   .contact-layout,
-  .lens-panel {
+  .lens-ficha-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1110,42 +1079,6 @@ textarea {
 
   .zeiss-feature-icon.zeiss-logo-icon {
     width: 82px;
-  }
-
-  .lens-panel {
-    grid-template-areas:
-      "left"
-      "middle"
-      "right";
-    gap: 10px;
-    border-radius: 22px;
-    background: #ddebe8;
-  }
-
-  .lens-panel.bottom-row {
-    background: #ddebe8;
-  }
-
-  .lens-photo {
-    min-height: 220px;
-    margin: 10px;
-  }
-
-  .lens-copy {
-    grid-template-rows: none;
-    min-height: auto;
-  }
-
-  .lens-copy-block:first-child {
-    border-radius: 16px 16px 0 0;
-  }
-
-  .lens-copy-block:last-child {
-    border-radius: 0 0 16px 16px;
-  }
-
-  .lens-copy-block {
-    min-height: auto;
   }
 
   .cta-row {
