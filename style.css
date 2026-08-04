@@ -23,14 +23,6 @@
   --hero-height: 404px;
   --hero-padding-top: 118px;
   --hero-padding-bottom: 62px;
-  /* Ajuste manual del logo chico de la card ZEISS */
-  --logo-zeiss-scale: 1;
-  --logo-zeiss-x: 0px;
-  --logo-zeiss-y: 0px;
-  /* Ajuste manual del logo del footer */
-  --logo-footer-scale: 1.05;
-  --logo-footer-x: 0px;
-  --logo-footer-y: -2px;
 }
 
 *,
@@ -274,8 +266,8 @@ textarea {
 }
 
 .zeiss-eyebrow-logo-wrap {
-  width: 46px;
-  height: 46px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   overflow: hidden;
   display: grid;
@@ -287,13 +279,21 @@ textarea {
 }
 
 .zeiss-eyebrow-logo {
-  width: 100%;
+  width: 78%;
   max-width: none;
-  height: 100%;
-  object-fit: cover;
+  height: 78%;
+  object-fit: contain;
   object-position: center;
-  transform: translate(var(--logo-zeiss-x), var(--logo-zeiss-y)) scale(var(--logo-zeiss-scale));
-  transform-origin: center;
+}
+
+.zeiss-eyebrow-text {
+  white-space: nowrap;
+}
+
+.zeiss-eyebrow-vision-logo {
+  height: 26px;
+  width: auto;
+  max-width: none;
 }
 
 .zeiss-copy p {
@@ -346,14 +346,15 @@ textarea {
 }
 
 .zeiss-feature-icon.zeiss-logo-icon {
-  width: 100px;
-  border-radius: 16px;
-  background: #141e8c;
+  width: 150px;
+  border-radius: 14px;
+  background: #ffffff;
   overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(20, 30, 60, 0.08);
 }
 
 .zeiss-feature-icon.zeiss-logo-icon img {
-  width: 76%;
+  width: 92%;
   height: auto;
   display: block;
 }
@@ -861,14 +862,12 @@ textarea {
 }
 
 .footer-brand-badge img {
-  width: 100%;
+  width: 84%;
   max-width: none;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 46%;
+  height: 84%;
+  object-fit: contain;
+  object-position: center;
   opacity: 1;
-  transform: translate(var(--logo-footer-x), var(--logo-footer-y)) scale(var(--logo-footer-scale));
-  transform-origin: center;
 }
 
 .footer-contact {
@@ -1078,7 +1077,7 @@ textarea {
   }
 
   .zeiss-feature-icon.zeiss-logo-icon {
-    width: 82px;
+    width: 118px;
   }
 
   .cta-row {
