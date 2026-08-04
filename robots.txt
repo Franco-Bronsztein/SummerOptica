@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://summer-optica.vercel.app/sitemap.xml
+Sitemap: https://franco-bronsztein.github.io/SummerOptica/sitemap.xml
