@@ -1,15 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Foto ilustrada infantil">
-  <rect width="420" height="320" rx="28" fill="#f4efe8"/>
-  <circle cx="84" cy="236" r="54" fill="#7ad0e5" opacity="0.9"/>
-  <circle cx="328" cy="226" r="56" fill="#b7da8f" opacity="0.95"/>
-  <circle cx="278" cy="176" r="30" fill="#f2c6cf" opacity="0.88"/>
-  <circle cx="198" cy="102" r="46" fill="#e0b28d"/>
-  <path d="M154 108c8-38 78-54 96 0-4 24-26 34-48 34-22 0-42-10-48-34z" fill="#80543e"/>
-  <rect x="154" y="156" width="88" height="96" rx="26" fill="#d8d4cf"/>
-  <rect x="174" y="126" width="22" height="12" rx="6" fill="#1c1c1c"/>
-  <rect x="204" y="126" width="22" height="12" rx="6" fill="#1c1c1c"/>
-  <rect x="194" y="130" width="10" height="6" rx="3" fill="#1c1c1c"/>
-  <rect x="172" y="176" width="52" height="12" rx="6" fill="#7f95b7"/>
-  <rect x="166" y="196" width="64" height="12" rx="6" fill="#7f95b7"/>
-  <path d="M126 292c18-46 52-74 116-74s100 28 116 74" fill="#ede7df"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Icono de lentes para ninos y adolescentes">
+  <rect width="420" height="320" rx="28" fill="#e3f4fa"/>
+  <ellipse cx="210" cy="270" rx="150" ry="16" fill="#cfe9f2"/>
+  <path d="M312 88l7 16 17 4-13 12 3 17-14-9-14 9 3-17-13-12 17-4z" fill="#4f9cc7"/>
+  <path d="M104 168c-24-6-40 4-46 20" fill="none" stroke="#1c4a63" stroke-width="11" stroke-linecap="round"/>
+  <path d="M316 168c24-6 40 4 46 20" fill="none" stroke="#1c4a63" stroke-width="11" stroke-linecap="round"/>
+  <path d="M198 176c7-9 11-9 18 0" fill="none" stroke="#1c4a63" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="152" cy="182" r="54" fill="#dff3fb" stroke="#1c4a63" stroke-width="11"/>
+  <circle cx="262" cy="182" r="54" fill="#dff3fb" stroke="#1c4a63" stroke-width="11"/>
 </svg>
