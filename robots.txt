@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://summer-optica.vercel.app/sitemap.xml
