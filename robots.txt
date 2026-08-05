@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://franco-bronsztein.github.io/SummerOptica/sitemap.xml
+Sitemap: https://opticasammer.com/sitemap.xml
